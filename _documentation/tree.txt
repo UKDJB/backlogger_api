@@ -1,0 +1,35 @@
+backlogger_api/
+├── _documentation/
+│   ├── todo.md
+│   ├── tree_source.txt
+│   └── tree.txt
+├── authentication/
+│   ├── migrations/
+│   │   └── __init__.py
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── managers.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── backlogger_api/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── tests/
+│   ├── authentication/
+│   │   ├── __init__.py
+│   │   ├── test_serializers.py
+│   │   ├── test_views.py
+│   │   └── tests.py
+│   └── __init__.py
+├── conftest.py
+├── .env
+├── .gitignore
+├── manage.py 
+└── pytest.ini

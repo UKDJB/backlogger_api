@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Applications
     'authentication',
+
+    # Third party apps
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +91,9 @@ DATABASES = {
     }
 }
 
+# Use custom user model
+AUTH_USER_MODEL = 'authentication.CustomUser'
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -95,12 +103,45 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 8,
+        }
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'authentication.validators.SpecialCharacterValidator',
+        'OPTIONS': {
+            'min_special_chars': 1,
+        }
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'authentication.validators.UppercaseValidator',
+        'OPTIONS': {
+            'min_uppercase': 1,
+        }
+    },
+    {
+        'NAME': 'authentication.validators.LowercaseValidator',
+        'OPTIONS': {
+            'min_lowercase': 1,
+        }
+    },
+    {
+        'NAME': 'authentication.validators.NumberValidator',
+        'OPTIONS': {
+            'min_digits': 1,
+        }
+    },
+    {
+        'NAME': 'authentication.validators.RepeatedCharacterValidator',
+        'OPTIONS': {
+            'max_repeats': 3,
+        }
+    },
+    {
+        'NAME': 'authentication.validators.MaxLengthValidator',
+        'OPTIONS': {
+            'max_length': 128,
+        }
     },
 ]
 
