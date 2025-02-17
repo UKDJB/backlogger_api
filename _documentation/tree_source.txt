@@ -1,5 +1,6 @@
 backlogger_api
   _documentation
+    dev_tasks.md
     project_overview.md
     todo.md
     tree_source.txt
@@ -19,20 +20,47 @@ backlogger_api
     validators.py
     views.py
   backlogger_api
+    requirements
+      base.txt
+      development.txt
+      production.txt
+    settings
+      __init__.py
+      base.py
+      development.py
+      production.py
     __init__.py
     asgi.py
-    settings.py
     urls.py
     wsgi.py
-  tests
+  templates
     authentication
+      activation.html 
+  tests
+    e2e
+      authentication
+        __init__.py
       __init__.py
-      test_serializers.py
-      test_validators.py
-      test_views.py
-      tests.py
-    __init__.py
-  conftest.py
+    fixtures
+      __init__.py
+      authentication.py
+      factories.py
+      test_data.py
+    integration
+      authentication
+        __init__.py
+        test_registration.py
+        test_validation.py
+        test_verification.py
+      __init__.py
+    unit
+      authentication
+        __init__.py
+        test_serializers.py
+        test_templates.py
+        test_validators.py
+      __init__.py
+    conftest.py
   .env
   .gitignore
   manage.py 

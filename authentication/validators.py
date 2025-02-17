@@ -87,7 +87,7 @@ class RepeatedCharacterValidator:
         self.max_repeats = max_repeats
 
     def validate(self, password, user=None):
-        if re.search(r'(.)\1{' + str(self.max_repeats) + ',}', password):
+        if re.search(r'(.)\1{' + str(self.max_repeats-1) + ',}', password):
             raise ValidationError(
                 _(f'Password cannot contain more than {
                   self.max_repeats} repeated characters in a row.'),

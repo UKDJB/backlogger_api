@@ -48,14 +48,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
                 'password_confirm': "Passwords don't match."
             })
 
-        # Example of a business rule: domain restriction
-        email_domain = data['email'].split('@')[1]
-        allowed_domains = ['example.com', 'backlogger.io']
-        if email_domain not in allowed_domains:
-            raise serializers.ValidationError({
-                'email': f"Email must be from one of these domains: {', '.join(allowed_domains)}"
-            })
-
         return data
 
     def create(self, validated_data):

@@ -1,32 +1,41 @@
-from django.core.mail import send_mail
-from django.conf import settings
+# authentication/utils.py
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.conf import settings
 
 
 def send_verification_email(user, verification_url):
     """
     Send an email verification link to the user.
+    """
+    # Format the plain email address with spaces around @ for anti-spam
+    plain_email_address = 'This message was sent to ' + \
+        user.email.replace('@', ' @ ')
 
-    Args:
-        user: The user object
-        verification_url: The URL for email verification
-    """
-    subject = 'Verify your email address'
-    html_message = f"""
-    <p>Hi {user.first_name},</p>
-    <p>Please click the link below to verify your email address:</p>
-    <p><a href="{verification_url}">Verify Email</a></p>
-    <p>If you didn't create this account, you can safely ignore this email.</p>
-    <p>Thanks,<br>The Backlogger Team</p>
-    """
+    context = {
+        'first_name': user.first_name,
+        'verification_url': verification_url,
+        'email_address': user.email,
+        'plain_email_address': plain_email_address,
+    }
+
+    # Create email content
+    subject = "Please verify your email address"
+    html_message = render_to_string(
+        'authentication/activation.html', context)
     plain_message = strip_tags(html_message)
 
-    send_mail(
+    # Create the email message
+    message = EmailMultiAlternatives(
         subject=subject,
-        message=plain_message,
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[user.email],
-        html_message=html_message,
-        fail_silently=False,
+        body=plain_message,
+        from_email=None,
+        to=[user.email],
     )
+
+    # Attach HTML version
+    message.attach_alternative(html_message, "text/html")
+
+    # Send the email
+    message.send(fail_silently=False)

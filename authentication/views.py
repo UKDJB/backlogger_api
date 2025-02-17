@@ -72,28 +72,30 @@ class EmailVerificationView(views.APIView):
     permission_classes = [AllowAny]
 
     def get(self, request, uidb64, token):
-        # Verify user's email address.
         try:
             uid = force_str(urlsafe_base64_decode(uidb64))
             user = User.objects.get(pk=uid)
 
-            if default_token_generator.check_token(user, token):
-                if user.email_verified:
-                    return Response({
-                        'message': 'Email was already verified'
-                    }, status=status.HTTP_200_OK)
-
-                user.email_verified = True
-                user.is_active = True
-                user.save()
-
+            # Check if the token is valid
+            if not default_token_generator.check_token(user, token):
                 return Response({
-                    'message': 'Email successfully verified'
-                }, status=status.HTTP_200_OK)
+                    'error': 'Invalid or expired verification token'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Prevent already verified users from re-verifying
+            if user.email_verified:
+                return Response({
+                    'error': 'Email has already been verified'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Mark the email as verified
+            user.email_verified = True
+            user.is_active = True
+            user.save()
 
             return Response({
-                'error': 'Invalid verification token'
-            }, status=status.HTTP_400_BAD_REQUEST)
+                'message': 'Email successfully verified'
+            }, status=status.HTTP_200_OK)
 
         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
             return Response({
@@ -106,32 +108,33 @@ class EmailCheckView(views.APIView):
 
     @method_decorator(ratelimit(key='ip', rate='5/m', method=['POST']))
     def post(self, request):
-        # Check if email is available and valid.
-        email = request.data.get('email', '').lower()
+        """Check if an email is valid and available."""
+        email = request.data.get('email', '').strip()
 
         if not email:
-            return Response({
-                'error': 'Email is required'
-            }, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'error': 'Email is required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         try:
-            # Use Django's email validator
+            # Validate email format
             django_validate_email(email)
 
             # Check if email already exists
             if User.objects.filter(email=email).exists():
-                return Response({
-                    'error': 'This email address is already registered'
-                }, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {'error': 'This email address is already registered'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
 
-            return Response({
-                'message': 'Email is available'
-            }, status=status.HTTP_200_OK)
+            return Response({'message': 'Email is available'}, status=status.HTTP_200_OK)
 
         except ValidationError:
-            return Response({
-                'error': 'Enter a valid email address'
-            }, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'error': 'Invalid email format'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 
 class PasswordCheckView(views.APIView):

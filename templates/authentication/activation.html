@@ -1,0 +1,481 @@
+{% comment %} templates/authentication/activation.html {% endcomment %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>Email Activation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet" />
+    <!--  [if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]  -->
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+      body,
+      p {
+        font-family: "Comfortaa", Arial, sans-serif;
+      }
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 0;
+      }
+      p {
+        font-size: 16px;
+      }
+      img {
+        border: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #e8fbfa;
+        font-size: 16px;
+      }
+      .content {
+        line-height: 20px;
+        font-size: 16px;
+      }
+      .bluelink {
+        text-decoration: none;
+        color: #1e5d7b !important;
+      }
+      span.Object {
+        color: inherit !important;
+      }
+      span.Object-hover {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+      u + .body .gmail-blend-screen {
+        background: #000;
+        mix-blend-mode: screen;
+      }
+      u + .body .gmail-blend-difference {
+        background: #000;
+        mix-blend-mode: difference;
+      }
+      .ExternalClass {
+        width: 100%;
+      }
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+      a[x-apple-data-detectors="true"] {
+        color: inherit !important;
+        text-decoration: inherit !important;
+      }
+      @media screen and (max-width: 599.98px) {
+        .banner {
+          height: auto !important;
+          padding: 40px 0 60px !important;
+        }
+        .column-wrapper .padding {
+          padding-right: 0 !important;
+          padding-left: 0 !important;
+        }
+        .column-wrapper .column,
+        .column-wrapper .column img {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .column-wrapper {
+          padding: 0 75px !important;
+        }
+        .column-one-third img.one-third-col-img {
+          max-width: 60% !important;
+          padding-top: 15px !important;
+          background-color: transparent !important;
+        }
+        .column-two-third .content {
+          text-align: center !important;
+        }
+        .column-two-third {
+          padding-bottom: 30px !important;
+          background-color: transparent !important;
+        }
+        .column-wrapper .column-one-fourth {
+          width: 150px !important;
+          max-width: 150px !important;
+        }
+        .column-one-fourth .content img {
+          max-width: 120px !important;
+        }
+      }
+      @media screen and (max-width: 499.98px) {
+        .banner {
+          padding: 25px 0 50px !important;
+        }
+        .column-wrapper {
+          padding: 0 45px !important;
+        }
+      }
+      @media screen and (max-width: 399.98px) {
+        .banner {
+          padding: 10px 0 40px !important;
+        }
+        .column-wrapper {
+          padding: 0 20px !important;
+        }
+      }
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        body,
+        table,
+        .darkmode-bg {
+          background: #2d2d2d !important;
+          color: #ffffff !important;
+        }
+        [data-ogsc] body,
+        table,
+        .darkmode-bg {
+          background: #2d2d2d !important;
+          color: #ffffff !important;
+        }
+        .darkmode-transparent {
+          background-color: transparent !important;
+        }
+        [data-ogsc] .darkmode-transparent {
+          background-color: transparent !important;
+        }
+      }
+    </style>
+    <!--[if mso]>
+      <style type="text/css">
+        body {
+          background-color: #dde0e1 !important;
+        }
+        body,
+        table,
+        td,
+        p,
+        a {
+          font-family: "Comfortaa", Arial, Helvetica, sans-serif !important;
+        }
+        table {
+          border-spacing: 0 !important;
+          border-collapse: collapse !important;
+        }
+      </style>
+    <![endif]-->
+  </head>
+  <body class="body" xml:lang="en" style="margin: 0; padding: 0; min-width: 100%; background-color: #dde0e1">
+    <div
+      style="
+        width: 100%;
+        table-layout: fixed;
+        background-color: #dde0e1;
+        color: #3d3d3d;
+        font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        margin: 0 auto 40px;
+      "
+    >
+      <div
+        style="
+          max-width: 600px;
+          background-color: #fafdfe;
+          color: #3d3d3d;
+          font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          margin: 0 auto;
+        "
+      >
+        <div
+          style="
+            font-size: 0px;
+            color: #fafdfe;
+            mso-line-height-rule: exactly;
+            line-height: 0px;
+            display: none;
+            max-width: 0px;
+            max-height: 0px;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+          "
+        >
+          Hi {{ first_name }}... almost there, just click 'Initiate Launch Sequence' to get the adventure started!
+          <!-- Add Preheader Text Here (85-100 characters in length) -->
+          &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+        </div>
+        <!--  [if mso]>
+              <table width="600" align="center" style="border-spacing: 0; border-collapse:collapse; color: #3d3d3d;" role="presentation">
+              <tr>
+              <td style="padding:0;">
+          <![endif] -->
+        <table
+          align="center"
+          style="
+            border-spacing: 0;
+            border-collapse: collapse;
+            color: #3d3d3d;
+            font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background-color: #fafdfe;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+          "
+          role="presentation"
+        >
+          <!-- START BANNER -->
+          <tr>
+            <td style="padding: 0">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td class="darkmode-bg" style="background-color: #fafdfe; padding: 0 0 20px 0; text-align: center">
+                    <a href="https://example.com/6" target="_blank"
+                      ><img
+                        src="https://backlogger.blob.core.windows.net/img/email_welcome.png"
+                        alt="Welcome"
+                        title="Welcome"
+                        width="600"
+                        style="border: 0"
+                    /></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td class="darkmode-bg" style="background-color: #fafdfe; padding: 0 20px; text-align: right">
+                    <a href="https://example.com/6" target="_blank"
+                      ><img
+                        src="https://backlogger.blob.core.windows.net/img/logo.png"
+                        alt="Welcome"
+                        title="Welcome"
+                        width="160"
+                        style="border: 0"
+                    /></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 35px 0 30px">
+              <table width="100%" style="border-spacing: 0" role="presentation">
+                <tr>
+                  <td class="column-wrapper" style="padding: 0; font-size: 0; text-align: center">
+                    <!--[if mso]>
+                        <table width="100%" style="border-spacing: 0;" role="presentation">
+                        <tr>
+                        <td width="600" valign="top" style="padding: 0;">
+                    <![endif]-->
+                    <table
+                      class="column"
+                      style="
+                        border-spacing: 0;
+                        vertical-align: top;
+                        width: 100%;
+                        max-width: 600px;
+                        display: inline-block;
+                      "
+                      role="presentation"
+                    >
+                      <tr>
+                        <td class="padding" style="padding: 20px">
+                          <table
+                            class="content"
+                            style="
+                              mso-line-height-rule: exactly;
+                              line-height: 16px;
+                              border-spacing: 0;
+                              text-align: left;
+                            "
+                            role="presentation"
+                          >
+                            <tr>
+                              <td style="padding: 0 0 30px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">Hello {{ first_name }}</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 30px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  Welcome to the crew at Backlogger!
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 30px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  You&apos;re now part of a community where technology meets productivity in the coolest
+                                  of ways.
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 30px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  Ready to unleash the full potential of your projects?
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 45px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  Click below to get your account online:
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding-left: 10px">
+                                <table align="center" style="border-spacing: 0" role="presentation">
+                                  <tr>
+                                    <td align="center">
+                                      <!--[if mso]>
+                                        <v:roundrect
+                                          xmlns_v="urn:schemas-microsoft-com:vml"
+                                          xmlns_w="urn:schemas-microsoft-com:office:word"
+                                          href="{{ verification_url }}"
+                                          style="height: 34.5pt; width: 275pt; v-text-anchor: middle"
+                                          arcsize="14%"
+                                          strokecolor="#3399cc"
+                                          fillcolor="#3399cc"
+                                        >
+                                          <w:anchorlock />
+                                          <center
+                                            style="
+                                              color: #ffffff;
+                                              font-family: Arial, Helvetica, sans-serif;
+                                              font-size: 16px;
+                                              font-weight: 300;
+                                            "
+                                          >
+                                            Initiate Launch Sequence
+                                          </center>
+                                        </v:roundrect>
+                                      <![endif]-->
+                                      <a
+                                        href="{{ verification_url }}"
+                                        target="_blank"
+                                        style="
+                                          font-size: 18px;
+                                          font-weight: 300;
+                                          text-decoration: none;
+                                          color: #ffffff;
+                                          background-color: #3399cc;
+                                          padding: 10px 25px;
+                                          border: 1px solid #3399cc;
+                                          border-radius: 10px;
+                                          display: inline-block;
+                                          mso-hide: all;
+                                        "
+                                        >Initiate Launch Sequence</a
+                                      >
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 45px 0 30px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  We’re here to navigate through this tech terrain. Get ready for some serious
+                                  innovation and fun.
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0 0 0 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  Let’s create and collaborate. . .
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 4px 0 30px 10px">
+                                <p style="font-size: 16px; font-weight: 300; margin: 0">
+                                  <span style="color: #0ea5e9; font-weight: 700">The Backlogger Team &nbsp;</span>😊
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0">
+              <table
+                width="100%"
+                style="mso-line-height-rule: exactly; line-height: 16px; border-spacing: 0"
+                role="presentation"
+              >
+                <tr>
+                  <td
+                    style="padding: 0.6px; background: linear-gradient(#dde0e1, #dde0e1); background-color: #dde0e1"
+                  ></td>
+                </tr>
+                <tr>
+                  <td style="padding: 30px 0 0 0; color: #747474; text-align: center; font-size: 11px">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <p style="font-size: 11px; margin: 0">
+                          &#169; 2024 Backlogger&#8203;.Io Limited, U&#8203;nit A, 82 J&#8203;ames Carter Road,
+                          Mildenhall IP28 7DE
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 15px 0 20px 0; color: #747474; text-align: center; font-size: 11px">
+                    <div class="gmail-blend-screen">
+                      <div class="gmail-blend-difference">
+                        <p style="font-size: 11px; margin: 0">{{ plain_email_address }}</p>
+                      </div>
+                    </div>
+                    <!-- [if mso]>
+                        <div style="font-size: 0; mso-line-height-rule: exactly; line-height: 0; display: none; mso-hide: all;">
+                          &zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
+                        </div>
+                    <![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- [if mso]>
+          </td>
+          </tr>
+          </table>
+          <![endif] -->
+      </div>
+    </div>
+  </body>
+</html>
