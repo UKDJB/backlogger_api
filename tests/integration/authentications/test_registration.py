@@ -1,4 +1,4 @@
-# tests/integration/authentication/test_registration.py
+# tests/integration/authentications/test_registration.py
 import pytest
 from django.core import mail
 from django.contrib.auth import get_user_model
@@ -19,7 +19,7 @@ class TestRegistrationFlow:
 
     def test_successful_registration(self, api_client):
         """Test successful user registration with valid data."""
-        url = reverse('authentication:register')
+        url = reverse('authentications:register')
         response = api_client.post(url, VALID_REGISTRATION_DATA, format='json')
 
         assert response.status_code == status.HTTP_201_CREATED
@@ -46,7 +46,7 @@ class TestRegistrationFlow:
         )
 
         # Attempt registration with same email
-        url = reverse('authentication:register')
+        url = reverse('authentications:register')
         response = api_client.post(url, VALID_REGISTRATION_DATA, format='json')
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -60,7 +60,7 @@ class TestRegistrationFlow:
         invalid_data['password'] = 'weak'
         invalid_data['password_confirm'] = 'weak'
 
-        url = reverse('authentication:register')
+        url = reverse('authentications:register')
         response = api_client.post(url, invalid_data, format='json')
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -73,7 +73,7 @@ class TestRegistrationFlow:
         mismatched_data = VALID_REGISTRATION_DATA.copy()
         mismatched_data['password_confirm'] = 'DifferentP@ssw0rd123'
 
-        url = reverse('authentication:register')
+        url = reverse('authentications:register')
         response = api_client.post(url, mismatched_data, format='json')
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -87,7 +87,7 @@ class TestRegistrationFlow:
         modified_data = VALID_REGISTRATION_DATA.copy()
         modified_data['email'] = 'another.test@example.com'
 
-        url = reverse('authentication:register')
+        url = reverse('authentications:register')
         response = api_client.post(url, modified_data, format='json')
 
         assert response.status_code == status.HTTP_201_CREATED

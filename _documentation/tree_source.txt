@@ -5,7 +5,7 @@ backlogger_api
     todo.md
     tree_source.txt
     tree.txt
-  authentication
+  authentications
     migrations
       __init__.py
     __init__.py
@@ -34,28 +34,28 @@ backlogger_api
     urls.py
     wsgi.py
   templates
-    authentication
+    authentications
       activation.html 
   tests
     e2e
-      authentication
+      authentications
         __init__.py
       __init__.py
     fixtures
       __init__.py
-      authentication.py
+      authentications.py
       factories.py
       test_data.py
       test_fixtures.py
     integration
-      authentication
+      authentications
         __init__.py
         test_registration.py
         test_validation.py
         test_verification.py
       __init__.py
     unit
-      authentication
+      authentications
         __init__.py
         test_serializers.py
         test_templates.py

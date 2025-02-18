@@ -19,7 +19,7 @@
   - [x] Configure environment-specific settings
   - [x] Configure CORS and security headers
   
-### Authentication & Security Foundation
+### Authentications & Security Foundation
 - [x] Create base user serializer
 - [x] Create registration serializer
 - [x] Add password validation rules
@@ -29,12 +29,12 @@
 - [x] Implement rate limiting
 - [x] Create consolidated security headers
 - [x] Configure basic JWT settings
-- [ ] Implement API Authentication [HIGH]
+- [ ] Implement API Authentications [HIGH]
   - [ ] Create login view for JWT token generation
   - [ ] Create token refresh view
   - [ ] Add token blacklist functionality
   - [ ] Implement protected view decorators
-- [ ] Add Authentication Tests [HIGH]
+- [ ] Add Authentications Tests [HIGH]
   - [ ] Test login flow
   - [ ] Test token refresh
   - [ ] Test token blacklist
@@ -88,7 +88,7 @@
 - [ ] Set up test fixtures [HIGH]
   - [x] Create base test data fixtures
   - [ ] Implement factory_boy factories
-  - [x] Set up authentication fixtures
+  - [x] Set up authentications fixtures
   - [x] Create shared test utilities
 - [ ] Implement CI/CD test integration [HIGH]
   - [ ] Set up GitHub Actions for testing
@@ -168,7 +168,7 @@
 - [ ] Create view test suite [HIGH]
   - [ ] Test CRUD operations
   - [ ] Implement permission tests
-  - [ ] Add authentication tests
+  - [ ] Add authentications tests
   - [ ] Create error handling tests
 - [x] Template tests (in test_templates) [MEDIUM]
   - [x] Test email templates
@@ -190,7 +190,7 @@
     - [x] MaxLengthValidator
 
 ## Integration Testing (/tests/integration/)
-- [x] Create authentication integration tests [HIGH]
+- [x] Create authentications integration tests [HIGH]
 - [x] Test registration flow (test_registration.py)
   - [x] Complete registration flow testing
   - [x] Email validation checks
@@ -224,7 +224,7 @@
   - [ ] Configure e2e test environment
   - [ ] Set up test data seeding
   - [ ] Create test user journeys
-- [ ] Implement authentication e2e tests [HIGH]
+- [ ] Implement authentications e2e tests [HIGH]
   - [ ] Test complete registration flow
   - [ ] Test login/logout process
   - [ ] Test password reset flow
@@ -236,7 +236,7 @@
 ### Test Fixtures (/tests/fixtures/)
 - [ ] Create base test data [HIGH]
   - [ ] Implement test data factories
-  - [ ] Create authentication fixtures
+  - [ ] Create authentications fixtures
   - [ ] Set up shared test utilities
 - [ ] Add factory boy implementations [HIGH]
   - [ ] Create model factories
@@ -264,7 +264,7 @@
 
 ```python
 # requirements.txt
-# Core & Authentication
+# Core & Authentications
 djangorestframework==3.15.2
 djangorestframework-jwt==2.0.0
 django-cors-headers==4.3.0
@@ -295,7 +295,7 @@ python manage.py loaddata initial_data
 
 # Running tests
 pytest
-pytest apps/authentication/tests/
+pytest apps/authentications/tests/
 pytest apps/hierarchy/tests/
 ```
 

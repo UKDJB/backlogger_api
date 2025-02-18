@@ -1,4 +1,4 @@
-# tests/integration/authentication/test_verification.py
+# tests/integration/authentications/test_verification.py
 import pytest
 from django.contrib.auth.tokens import default_token_generator
 from django.urls import reverse
@@ -23,7 +23,7 @@ class TestEmailVerificationFlow:
         token = default_token_generator.make_token(unverified_user)
 
         response = api_client.get(
-            reverse('authentication:verify-email',
+            reverse('authentications:verify-email',
                     kwargs={'uidb64': uid, 'token': token})
         )
 
@@ -46,7 +46,7 @@ class TestEmailVerificationFlow:
         uid = uid or urlsafe_base64_encode(force_bytes(unverified_user.pk))
 
         response = api_client.get(
-            reverse('authentication:verify-email',
+            reverse('authentications:verify-email',
                     kwargs={'uidb64': uid, 'token': token})
         )
 
@@ -68,7 +68,7 @@ class TestEmailVerificationFlow:
 
         # Use the old token (should now be invalid)
         response = api_client.get(
-            reverse('authentication:verify-email',
+            reverse('authentications:verify-email',
                     kwargs={'uidb64': uid, 'token': token})
         )
 
@@ -86,12 +86,12 @@ class TestEmailVerificationFlow:
         token = default_token_generator.make_token(unverified_user)
 
         # First verification
-        api_client.get(reverse('authentication:verify-email',
+        api_client.get(reverse('authentications:verify-email',
                        kwargs={'uidb64': uid, 'token': token}))
 
         # Second verification attempt
         response = api_client.get(
-            reverse('authentication:verify-email', kwargs={'uidb64': uid, 'token': token}))
+            reverse('authentications:verify-email', kwargs={'uidb64': uid, 'token': token}))
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
     def test_verification_wrong_user(self, api_client, unverified_user):
@@ -105,7 +105,7 @@ class TestEmailVerificationFlow:
         # Try to verify user2 using user1's token
         uid = urlsafe_base64_encode(force_bytes(user2.pk))
         response = api_client.get(
-            reverse('authentication:verify-email', kwargs={'uidb64': uid, 'token': token}))
+            reverse('authentications:verify-email', kwargs={'uidb64': uid, 'token': token}))
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 

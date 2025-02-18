@@ -75,7 +75,7 @@ backlogger_api/
 │   ├── todo.md
 │   ├── tree_source.txt
 │   └── tree.txt
-├── authentication/
+├── authentications/
 │   ├── migrations/
 │   │   └── __init__.py
 │   ├── __init__.py
@@ -96,7 +96,7 @@ backlogger_api/
 │   ├── urls.py
 │   └── wsgi.py
 ├── tests/
-│   ├── authentication/
+│   ├── authentications/
 │   │   ├── __init__.py
 │   │   ├── test_serializers.py
 │   │   ├── test_validators.py

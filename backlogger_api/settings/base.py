@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Applications
-    'authentication',
+    'authentications',
+    'organisations',
+    "items",
 
     # Third party apps
     'rest_framework',
@@ -107,37 +109,37 @@ AUTH_PASSWORD_VALIDATORS = [
         }
     },
     {
-        'NAME': 'authentication.validators.SpecialCharacterValidator',
+        'NAME': 'authentications.validators.SpecialCharacterValidator',
         'OPTIONS': {
             'min_special_chars': 1,
         }
     },
     {
-        'NAME': 'authentication.validators.UppercaseValidator',
+        'NAME': 'authentications.validators.UppercaseValidator',
         'OPTIONS': {
             'min_uppercase': 1,
         }
     },
     {
-        'NAME': 'authentication.validators.LowercaseValidator',
+        'NAME': 'authentications.validators.LowercaseValidator',
         'OPTIONS': {
             'min_lowercase': 1,
         }
     },
     {
-        'NAME': 'authentication.validators.NumberValidator',
+        'NAME': 'authentications.validators.NumberValidator',
         'OPTIONS': {
             'min_digits': 1,
         }
     },
     {
-        'NAME': 'authentication.validators.RepeatedCharacterValidator',
+        'NAME': 'authentications.validators.RepeatedCharacterValidator',
         'OPTIONS': {
             'max_repeats': 3,
         }
     },
     {
-        'NAME': 'authentication.validators.MaxLengthValidator',
+        'NAME': 'authentications.validators.MaxLengthValidator',
         'OPTIONS': {
             'max_length': 128,
         }
@@ -145,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Use custom user model
-AUTH_USER_MODEL = 'authentication.CustomUser'
+AUTH_USER_MODEL = 'authentications.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

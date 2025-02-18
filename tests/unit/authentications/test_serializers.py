@@ -1,6 +1,6 @@
-# tests/unit/authentication/test_serializers.py
+# tests/unit/authentications/test_serializers.py
 import pytest
-from authentication.serializers import RegistrationSerializer
+from authentications.serializers import RegistrationSerializer
 
 
 @pytest.mark.unit

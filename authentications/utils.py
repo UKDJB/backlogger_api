@@ -1,4 +1,4 @@
-# authentication/utils.py
+# authentications/utils.py
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -23,7 +23,7 @@ def send_verification_email(user, verification_url):
     # Create email content
     subject = "Please verify your email address"
     html_message = render_to_string(
-        'authentication/activation.html', context)
+        'authentications/activation.html', context)
     plain_message = strip_tags(html_message)
 
     # Create the email message

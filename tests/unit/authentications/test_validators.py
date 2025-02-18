@@ -1,6 +1,6 @@
-# tests/unit/authentication/test_validators.py
+# tests/unit/authentications/test_validators.py
 import pytest
-from authentication.validators import (
+from authentications.validators import (
     SpecialCharacterValidator,
     UppercaseValidator,
     LowercaseValidator,

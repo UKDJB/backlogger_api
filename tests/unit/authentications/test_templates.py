@@ -1,4 +1,4 @@
-# tests/unit/authentication/test_templates.py
+# tests/unit/authentications/test_templates.py
 import os
 import pytest
 from django.template.loader import render_to_string
@@ -19,12 +19,12 @@ class TestEmailTemplates:
 
         # Check if file exists
         template_path = os.path.join(
-            settings.BASE_DIR, 'templates', 'emails', 'authentication', 'activation.html')
+            settings.BASE_DIR, 'templates', 'emails', 'authentications', 'activation.html')
         print(f"Looking for template at: {template_path}")
         print(f"File exists: {os.path.exists(template_path)}")
 
         try:
-            rendered = render_to_string('authentication/activation.html', {
+            rendered = render_to_string('authentications/activation.html', {
                 'first_name': 'David',
                 'verification_url': 'http://test.com/verify',
                 'plain_email_address': 'david_j_brown@outlook.com'
@@ -39,7 +39,7 @@ class TestEmailTemplates:
     def test_template_required_variables(self, template_context):
         """Test that the template properly uses all required variables."""
         rendered = render_to_string(
-            'authentication/activation.html', template_context)
+            'authentications/activation.html', template_context)
 
         assert template_context['first_name'] in rendered
         assert template_context['verification_url'] in rendered
@@ -48,7 +48,7 @@ class TestEmailTemplates:
     def test_template_html_structure(self, template_context):
         """Test that the template generates valid HTML structure."""
         rendered = render_to_string(
-            'authentication/activation.html', template_context)
+            'authentications/activation.html', template_context)
 
         # Check for essential HTML elements with flexible matching
         essential_elements = [
@@ -94,7 +94,7 @@ class TestEmailTemplates:
     def test_template_styling(self, template_context):
         """Test that the template includes required styling elements."""
         rendered = render_to_string(
-            'authentication/activation.html', template_context)
+            'authentications/activation.html', template_context)
 
         # Check for CSS classes or inline styles
         assert 'style=' in rendered

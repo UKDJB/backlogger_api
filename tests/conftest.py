@@ -5,7 +5,7 @@ import pytest
 import sys
 
 pytest_plugins = [
-    "tests.fixtures.authentication",
+    "tests.fixtures.authentications",
     "tests.fixtures.test_data"
 ]
 

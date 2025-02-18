@@ -1,5 +1,5 @@
-# tests/fixtures/authentication.py
-"""Authentication related test fixtures."""
+# tests/fixtures/authentications.py
+"""Authentications related test fixtures."""
 import pytest
 from django.core import mail
 from rest_framework.test import APIClient

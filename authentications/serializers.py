@@ -1,4 +1,4 @@
-# authentication/serializers.py
+# authentications/serializers.py
 from django.contrib.auth import get_user_model, password_validation
 from django.core import validators
 from django.core.exceptions import ValidationError

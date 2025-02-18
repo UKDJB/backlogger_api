@@ -7,7 +7,7 @@
 - [x] Create base user serializer
 
 ```python
-# apps/authentication/serializers/user.py
+# apps/authentications/serializers/user.py
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 - [x] Create registration serializer with validation
 
 ```python
-# apps/authentication/serializers/registration.py
+# apps/authentications/serializers/registration.py
 class RegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     password_confirm = serializers.CharField(write_only=True)
@@ -157,7 +157,7 @@ EMAIL_PREVIEW = {
 pip install -r requirements/email.txt
 
 # Create migrations for tracking
-python manage.py makemigrations authentication
+python manage.py makemigrations authentications
 
 # Apply migrations
 python manage.py migrate
@@ -170,7 +170,7 @@ python manage.py loaddata email_test_data
 
 ```bash
 # Run email-specific tests
-pytest apps/authentication/tests/test_emails.py
+pytest apps/authentications/tests/test_emails.py
 
 # Test email templates
 python manage.py test_email_templates
@@ -185,7 +185,7 @@ python manage.py email_preview_server
 - [ ] Add DMARC/SPF/DKIM configuration
 - [ ] Create email security headers
 - [ ] Implement anti-spam measures
-- [ ] Add email authentication
+- [ ] Add email authentications
 - [ ] Create privacy policy compliance
 
 ## Documentation Needs
@@ -387,7 +387,7 @@ HIERARCHY_SETTINGS = {
 - [ ] Add request validation
 - [ ] Create security headers
 - [ ] Implement audit logging
-- [ ] Add API authentication
+- [ ] Add API authentications
 - [ ] Create access policies
 
 ## Documentation Needs
