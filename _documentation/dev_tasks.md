@@ -41,7 +41,14 @@
   - [ ] Test protected views
 
 ### Core Data Models
-- [ ] Create Organisation model [HIGH]
+- [x] Create Organisation model [HIGH]
+  - [x] Core identification (UUID, name)
+  - [x] Status and subscription tier enums
+  - [x] Access control fields
+  - [x] Hierarchy configuration
+  - [x] Billing and subscription tracking
+  - [x] Compliance and audit fields
+  - [x] Business rule validation
 - [ ] Create Subscription model [HIGH]
 - [ ] Create Item model [HIGH]
   - [ ] Implement NodeType enumeration
