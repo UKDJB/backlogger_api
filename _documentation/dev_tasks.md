@@ -5,20 +5,20 @@
 
 ### Project Configuration
 - [x] Set up project requirements [HIGH]
-  - Create requirements directory structure
-  - Set up base.txt with core dependencies
-  - Set up development.txt with testing dependencies
-  - Set up production.txt with deployment dependencies
-  - Install development requirements
+  - [x] Create requirements directory structure
+  - [x] Set up base.txt with core dependencies
+  - [x] Set up development.txt with testing dependencies
+  - [x] Set up production.txt with deployment dependencies
+  - [x] Install development requirements
 - [x] Set up proper .env usage [HIGH]
-  - Install python-dotenv
-  - Configure .env loading in settings/base.py
-  - Update settings to use environment variables
+  - [x] Install python-dotenv
+  - [x] Configure .env loading in settings/base.py
+  - [x] Update settings to use environment variables
 - [x] Restructure Django settings
-  - Split settings into base/development/production
-  - Configure environment-specific settings
-  - Configure CORS and security headers
-  - 
+  - [x] Split settings into base/development/production
+  - [x] Configure environment-specific settings
+  - [x] Configure CORS and security headers
+  
 ### Authentication & Security Foundation
 - [x] Create base user serializer
 - [x] Create registration serializer
@@ -30,25 +30,24 @@
 - [x] Create consolidated security headers
 - [x] Configure basic JWT settings
 - [ ] Implement API Authentication [HIGH]
-  - Create login view for JWT token generation
-  - Create token refresh view
-  - Add token blacklist functionality
-  - Implement protected view decorators
+  - [ ] Create login view for JWT token generation
+  - [ ] Create token refresh view
+  - [ ] Add token blacklist functionality
+  - [ ] Implement protected view decorators
 - [ ] Add Authentication Tests [HIGH]
-  - Test login flow
-  - Test token refresh
-  - Test token blacklist
-  - Test protected views
+  - [ ] Test login flow
+  - [ ] Test token refresh
+  - [ ] Test token blacklist
+  - [ ] Test protected views
 
 ### Core Data Models
-- [ ] Create Objective model [HIGH]
-- [ ] Create Platform model [HIGH]
-- [ ] Create Product model [HIGH]
-- [ ] Create Feature model [HIGH]
-- [ ] Create Epic model [HIGH]
-- [ ] Create Story model [HIGH]
-- [ ] Implement model relationships [HIGH]
-- [ ] Create migration files [HIGH]
+- [ ] Create Organisation model [HIGH]
+- [ ] Create Subscription model [HIGH]
+- [ ] Create Item model [HIGH]
+  - [ ] Implement NodeType enumeration
+  - [ ] Set up composite keys with organisation
+  - [ ] Implement hierarchy validation rules
+  - [ ] Create migration files
 
 ## Phase 2: Basic Functionality (Sprint 3-4)
 
@@ -60,26 +59,50 @@
 - [ ] Implement preview view [MEDIUM]
 
 ### API Serializers
-- [ ] Create base hierarchy serializer [HIGH]
-- [ ] Implement Objective serializer [HIGH]
-- [ ] Implement Platform serializer [HIGH]
-- [ ] Implement Product serializer [HIGH]
-- [ ] Implement Feature serializer [HIGH]
-- [ ] Implement Epic serializer [HIGH]
-- [ ] Implement Story serializer [HIGH]
-
+- [ ] Create base Item serializer [HIGH]
+  - [ ] Implement type-specific field handling
+  - [ ] Add hierarchy validation
+  - [ ] Create organisation relationship handling
+- [ ] Create Organisation serializer [HIGH]
+- [ ] Create Subscription serializer [HIGH]
+  
 ### Basic API Endpoints
-- [ ] Create objective endpoints [HIGH]
-- [ ] Implement platform endpoints [HIGH]
-- [ ] Add product endpoints [HIGH]
-- [ ] Create feature endpoints [HIGH]
-- [ ] Implement epic endpoints [HIGH]
-- [ ] Add story endpoints [HIGH]
+- [ ] Create Item endpoints [HIGH]
+  - [ ] Implement CRUD operations
+  - [ ] Add filtering by node_type
+  - [ ] Add hierarchy traversal endpoints
+- [ ] Create Organisation endpoints [HIGH]
+- [ ] Create Subscription endpoints [HIGH]
+
+### Testing Infrastructure
+- [x] Set up pytest configuration [HIGH]
+  - [x] Configure pytest.ini with test settings
+  - [x] Set up conftest.py with shared fixtures
+  - [x] Configure test database settings
+  - [x] Set up coverage reporting
+- [ ] Create test directory structure [HIGH]
+  - [x] Set up unit test directory
+  - [x] Create integration test directory
+  - [x] Establish e2e test directory
+  - [x] Set up fixtures directory
+- [ ] Set up test fixtures [HIGH]
+  - [x] Create base test data fixtures
+  - [ ] Implement factory_boy factories
+  - [x] Set up authentication fixtures
+  - [x] Create shared test utilities
+- [ ] Implement CI/CD test integration [HIGH]
+  - [ ] Set up GitHub Actions for testing
+  - [ ] Configure test automation
+  - [ ] Set up test reporting
+  - [ ] Implement test coverage checks
+
 
 ## Phase 3: Team & Access Control (Sprint 5-6)
 
 ### Team Management
 - [ ] Create Team model [HIGH]
+  - [ ] Add organisation relationship
+  - [ ] Implement subscription limits
 - [ ] Implement team membership model [HIGH]
 - [ ] Create team serializers [HIGH]
 - [ ] Add team views [HIGH]
@@ -131,18 +154,98 @@
 
 ## Continuous Testing (All Phases)
 
-### Core Testing
-- [ ] Set up unified testing framework [HIGH]
-- [ ] Create test data fixtures [HIGH]
-- [ ] Implement test utilities [HIGH]
-- [ ] Add integration tests [HIGH]
-- [ ] Create performance tests [MEDIUM]
+### Unit Testing (/tests/unit/)
+- [ ] Create model test suite [HIGH]
+  - [ ] Write base model tests
+  - [ ] Implement relationship tests
+  - [ ] Add validation tests
+  - [ ] Create migration tests
+- [x] Implement serializer tests (in test_serializers.py) [HIGH]
+  - [x] Test serializer functionality
+  - [x] Add validation tests with parameterized tests
+  - [x] Test required fiields
+  - [x] Test data validation
+- [ ] Create view test suite [HIGH]
+  - [ ] Test CRUD operations
+  - [ ] Implement permission tests
+  - [ ] Add authentication tests
+  - [ ] Create error handling tests
+- [x] Template tests (in test_templates) [MEDIUM]
+  - [x] Test email templates
+  - [x] Validate template rendering
+  - [x] Test template context
+  - [x] Test template styling
+  - [x] Test missing variable handling
+- [ ] Validator tests (in test_validators.py) [HIGH]
+  - [x] Test field validators
+  - [x] Implement custom validation rules
+  - [x] Test validation messages
+  - [x] Test validator help text
+  - [x] Test all password validators
+    - [x] SpecialCharacterValidator
+    - [x] UppercaseValidator
+    - [x] Lowercase Validator
+    - [x] NumberValidator
+    - [x] RepeatedCharacterValidator
+    - [x] MaxLengthValidator
 
-### Security Testing
-- [ ] Implement security test suite [HIGH]
-- [ ] Add penetration testing [MEDIUM]
-- [ ] Test rate limiting [HIGH]
-- [ ] Create vulnerability scanning [MEDIUM]
+## Integration Testing (/tests/integration/)
+- [x] Create authentication integration tests [HIGH]
+- [x] Test registration flow (test_registration.py)
+  - [x] Complete registration flow testing
+  - [x] Email validation checks
+  - [x] Duplicate registration testing
+  - [x] Password validation
+  - [x] Template variables testing
+- [x] Implement validation tests
+  - [x] Email format validation
+  - [x] Password validation rules
+  - [x] Existing user/email check
+  - [x] Empty field handling
+- [x] Create verification tests
+  - [x] Successful verification flow
+  - [x] Invalid token handling
+  - [x] Expired link testing
+  - [x] Already verified user check
+  - [x] Wrong user verification attempt tests
+- [ ] Create API integration tests [HIGH]
+  - [ ] Test API endpoints
+  - [ ] Implement workflow tests
+  - [ ] Add performance benchmarks
+  - [ ] Test API versioning
+- [ ]  Add service integration tests [HIGH]
+  - [ ] Test external service integration
+  - [ ] Create mock service tests
+  - [ ] Add error handling tests
+  - [ ] Implement timeout tests
+
+### E2E Testing (/tests/e2e/)
+- [ ] Set up end-to-end test framework [HIGH]
+  - [ ] Configure e2e test environment
+  - [ ] Set up test data seeding
+  - [ ] Create test user journeys
+- [ ] Implement authentication e2e tests [HIGH]
+  - [ ] Test complete registration flow
+  - [ ] Test login/logout process
+  - [ ] Test password reset flow
+- [ ] Create workflow e2e tests [HIGH]
+  - [ ] Test main user workflows
+  - [ ] Implement cross-feature tests
+  - [ ] Test error scenarios
+
+### Test Fixtures (/tests/fixtures/)
+- [ ] Create base test data [HIGH]
+  - [ ] Implement test data factories
+  - [ ] Create authentication fixtures
+  - [ ] Set up shared test utilities
+- [ ] Add factory boy implementations [HIGH]
+  - [ ] Create model factories
+  - [ ] Implement related factories
+  - [ ] Add factory sequences
+- [ ] Create mock data generators [MEDIUM]
+  - [ ] Implement mock service responses
+  - [ ] Create mock API data
+  - [ ] Set up mock configurations
 
 ## Documentation (All Phases)
 

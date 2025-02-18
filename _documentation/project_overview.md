@@ -3,17 +3,39 @@
 ## 1.&nbsp;&nbsp;&nbsp;Overview
 ### Introduction
 Backlogger is a project management tool built on a robust API, offering users a flexible and scalable platform to manage projects efficiently. It supports self-registration, enabling individuals and teams to create accounts, join existing subscriptions, or establish new ones tailored to their project needs.
-### Key Features
-- Flexible Project Management Frameworks: Users can manage projects using Waterfall, Kanban, or Scrum, adapting to their preferred workflow.
-- Hierarchical Structure: Supports a multi-layered approach with objects such as:
-  - Objective/Initiative
-  - Platform
-  - Project/Application
-  - Feature
-  - Epic
-  - User Story, Technical Enabler, Spike, Bug, Sub-task
-- Subscription-Based Model: Users can opt for different subscription tiers based on their project complexity and team size.
-- Scalability: Designed to accommodate both small teams and large enterprises with advanced project tracking needs.
+### Organisation/Subscription
+The **Organisation/Subscription** is the top-level entity that all other objects are linked to. Once a user is authenticated, they create their **organisation**, which comes with a **default hierarchical structure**. This structure is flexible—users can choose a **simple Kanban setup** for task management or enable a **more advanced framework like Scrum or Waterfall** as needed.  
+
+### Subscription Tiers  
+Each subscription tier determines the available features and project structure:  
+
+1. **Basic** (Free) – Shared database with limited functionality. Defaults to a **simple task-based system** (e.g., a Kanban board with tasks).  
+2. **Standard** (Paid) – Shared database with **limited users** and **self-administered data checkpointing**. Users can enable additional project management features.  
+3. **Premier** (Paid) – Exclusive database, allowing full control over **custom hierarchies** and expanded project structures.  
+4. **Enterprise** (Paid) – Includes **all three project management frameworks** (**Waterfall, Kanban, and Scrum**) with **unlimited domain-based users** and full access to advanced hierarchical layers like **Objectives, Initiatives, Platforms, and Applications** for enterprise-scale management.  
+
+---
+
+### Key Features  
+
+#### Customizable Hierarchical Structure  
+Upon setup, an organisation includes default objects that can be expanded based on the user’s needs:  
+- **Basic Setup** – **Task-based workflow** for Kanban users.  
+- **Advanced Setup** – Objects like **App, Feature, Epic, User Story, and Technical Enabler** can be enabled for structured Scrum workflows.  
+- **Enterprise-Level Setup** – Additional layers like **Objective, Initiative, Platform, and Application**, supporting both **Agile (Kanban & Scrum)** and **Waterfall** methodologies.  
+
+#### Flexible Project Management Frameworks  
+Supports:  
+- **Waterfall** – Linear project progression for structured planning.  
+- **Kanban (Agile)** – Continuous flow task management.  
+- **Scrum (Agile)** – Iteration-based development with Epics, Features, and User Stories.  
+
+#### Scalability  
+Designed for **individuals, small teams, and large enterprises**, ensuring projects can start simple and expand as needed.  
+
+#### Subscription-Based Model  
+Users can **start with basic functionality** and progressively unlock more advanced features **as their needs grow**.  
+
 ### Target Audience
 - Software Development Teams: Teams following agile or traditional project management methodologies.
 - Startups & Enterprises: Organizations seeking a structured yet flexible project management tool.

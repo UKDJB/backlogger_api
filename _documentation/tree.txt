@@ -45,7 +45,8 @@ backlogger_api/
 │   │   ├── __init__.py
 │   │   ├── authentication.py
 │   │   ├── factories.py
-│   │   └── test_data.py
+│   │   ├── test_data.py
+│   │   └── test_fixtures.py
 │   ├── integration/
 │   │   ├── authentication/
 │   │   │   ├── __init__.py
