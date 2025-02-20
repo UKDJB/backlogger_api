@@ -1,17 +1,19 @@
-backlogger_api
-  _documentation
+backlogger_api/
+  _documentation/
     dev_tasks.md
     project_overview.md
     todo.md
-    tree_source.txt
     tree.txt
-  authentications
-    migrations
-      __init__.py
+    tree_source.txt
+    treemap.py
+  authentications/
     __init__.py
     admin.py
     apps.py
     managers.py
+    migrations/
+      0001_initial.py
+      __init__.py
     models.py
     serializers.py
     tests.py
@@ -19,50 +21,75 @@ backlogger_api
     utils.py
     validators.py
     views.py
-  backlogger_api
-    requirements
+  backlogger_api/
+    __init__.py
+    asgi.py
+    requirements/
       base.txt
       development.txt
       production.txt
-    settings
+    settings/
       __init__.py
       base.py
       development.py
       production.py
-    __init__.py
-    asgi.py
     urls.py
     wsgi.py
-  templates
-    authentications
-      activation.html 
-  tests
-    e2e
-      authentications
-        __init__.py
+  items/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
       __init__.py
-    fixtures
+    models.py
+    tests.py
+    urls.py
+    views.py
+  manage.py
+  organisations/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+      0001_initial.py
+      __init__.py
+    models.py
+    tests.py
+    urls.py
+    views.py
+  pytest.ini
+  templates/
+    authentications/
+      activation.html
+  tests/
+    __init__.py
+    conftest.py
+    e2e/
+      __init__.py
+      authentications/
+        __init__.py
+    factories/
+      __init__.py
+      authentication.py
+      organisation.py
+    fixtures/
       __init__.py
       authentications.py
-      factories.py
       test_data.py
       test_fixtures.py
-    integration
-      authentications
+    integration/
+      __init__.py
+      authentications/
         __init__.py
         test_registration.py
         test_validation.py
         test_verification.py
+    unit/
       __init__.py
-    unit
-      authentications
+      authentications/
         __init__.py
         test_serializers.py
         test_templates.py
         test_validators.py
-      __init__.py
-    conftest.py
-  .env
-  .gitignore
-  manage.py 
-  pytest.ini
+      test_factories.py
+    urls.py

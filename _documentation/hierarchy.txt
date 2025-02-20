@@ -1,0 +1,72 @@
+Organisation
+└── Platform
+    └── Project/Product/Application
+        └── Feature
+            └── Epic
+                ├── User Story
+                ├── Task
+                ├── Spike
+                ├── Test
+                ├── Bug
+                ├── Technical Debt
+                ├── Improvement
+                ├── Spike
+                ├── Defect
+                ├── Support Ticket
+                └── Change Request  
+
+Your unified logical data structure introduces a hierarchical relationship among work items. This structure clarifies ownership and dependencies, ensuring consistency across projects.
+
+Given this, the "Summary of Minimum Work Item Types by Level" should align with the Epic-based hierarchy while maintaining simplicity at different experience levels.
+
+Starter (Essential Work Items)
+    For teams new to Kanban, work items focus on basic execution within the Epic structure.
+
+    Epic
+    User Story – Defines an end-user requirement.
+    Task – A specific unit of work needed to complete a story.
+    Bug – Tracks defects or issues that need fixing.
+
+    Why? This keeps the structure lightweight while ensuring planned work (User Story & Task) and unplanned work (Bug) are covered.
+
+Pro (Intermediate Work Items)
+    For teams needing better work categorization, work items support feature planning and technical health.
+
+    Epic
+    User Story
+    Task
+    Bug
+    Technical Debt – Addresses past shortcuts or refactoring needs.
+    Improvement – Enhancements to existing functionality.
+    Spike – Research or exploration work before implementation.
+    Test – Work related to validation and quality assurance.
+
+    Why? Adds testing, technical debt, and research items, ensuring a more structured product development approach.
+
+Business (Advanced Work Items)
+    For large-scale teams, this level introduces customer interaction, defect tracking, and process-driven changes.
+
+    Epic
+    User Story
+    Task
+    Bug
+    Technical Debt
+    Improvement
+    Spike
+    Test
+    Defect – Quality issues reported during testing.
+    Support Ticket – Customer-reported issues requiring attention.
+    Change Request – Requested modification to an existing feature.
+
+    Why? The Business level differentiates between internal defects (Defect), external issues (Support Ticket), and process-driven modifications (Change Request)—ensuring complete tracking of work from development to deployment.
+
+Summary of Minimum Work Item Types by Level
++----------+---------------------------------------------------------------------------------------------------------------+
+| Category |                                                   Work Items                                                  |
++----------+---------------------------------------------------------------------------------------------------------------+
+| Starter  | Epic, User Story, Task, Bug                                                                                   |
++----------+---------------------------------------------------------------------------------------------------------------+
+| Pro      | Epic, User Story, Task, Bug, Technical Debt, Improvement, Spike, Test                                         |
++----------+---------------------------------------------------------------------------------------------------------------+
+| Business | Epic, User Story, Task, Bug, Technical Debt, Improvement, Spike, Test, Defect, Support Ticket, Change Request |
++----------+---------------------------------------------------------------------------------------------------------------+

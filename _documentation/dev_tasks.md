@@ -49,13 +49,56 @@
   - [x] Billing and subscription tracking
   - [x] Compliance and audit fields
   - [x] Business rule validation
-- [ ] Create Subscription model [HIGH]
+- [x] Create Subscription model [HIGH]
+  - [x] Implement billing intervals
+  - [x] Add usage tracking
+  - [x] Set up validation rules
+  - [x] Create tier-based limits
 - [ ] Create Item model [HIGH]
   - [ ] Implement NodeType enumeration
+    - [ ] Create base node types (Task, Bug, Improvement)
+    - [ ] Add Pro tier types (Feature, Epic, User Story, Technical Items)
+    - [ ] Add Business tier types (Waterfall phases, Business Items)
   - [ ] Set up composite keys with organisation
   - [ ] Implement hierarchy validation rules
+    - [ ] Validate methodology-specific hierarchies (Kanban, Scrum, Waterfall)
+    - [ ] Implement tier-based hierarchy restrictions
+    - [ ] Add methodology switching validation
   - [ ] Create migration files
-
+  - [ ] Add hierarchy depth validation
+    - [ ] Implement tier-specific depth limits
+    - [ ] Add methodology-specific depth validation
+    - [ ] Create custom depth validators by item type
+  - [ ] Implement parent-child relationship logic
+    - [ ] Add methodology-specific relationship rules
+    - [ ] Implement tier-based relationship restrictions
+    - [ ] Create cross-methodology relationship validation
+  - [ ] Set up item state tracking
+    - [ ] Add basic state machine for all items
+    - [ ] Create methodology-specific state flows
+    - [ ] Implement state transition validation
+  - [ ] Add subscription tier constraints
+    - [ ] Implement Starter tier limitations
+    - [ ] Add Pro tier feature access
+    - [ ] Create Business tier capabilities
+  - [ ] Create custom indexes for hierarchy queries
+    - [ ] Add indexes for parent-child queries
+    - [ ] Create methodology-specific indexes
+    - [ ] Implement cross-project relationship indexes
+  - [ ] Implement soft delete functionality
+    - [ ] Add cascade soft delete for hierarchies
+    - [ ] Create reactivation logic
+    - [ ] Implement tier-specific retention rules
+  - [ ] Add methodology mapping support [HIGH]
+    - [ ] Implement Kanban flow-based structure
+    - [ ] Create Scrum iterative hierarchy
+    - [ ] Add Waterfall phase-based organization
+    - [ ] Support methodology switching
+  - [ ] Create tier-based access control [HIGH]
+    - [ ] Implement Starter tier restrictions
+    - [ ] Add Pro tier feature gates
+    - [ ] Create Business tier capabilities
+  
 ## Phase 2: Basic Functionality (Sprint 3-4)
 
 ### Email System
@@ -97,6 +140,11 @@
   - [ ] Implement factory_boy factories
   - [x] Set up authentications fixtures
   - [x] Create shared test utilities
+- [x] Set up test factories infrastructure [HIGH]
+  - [x] Rename /test/fixtures/factories.py to authentication.py
+  - [x] Create /tests/factories folder
+  - [x] Create __init__.py file 
+  - [x] Edit __init__.py to expose the UserFactory
 - [ ] Implement CI/CD test integration [HIGH]
   - [ ] Set up GitHub Actions for testing
   - [ ] Configure test automation
@@ -162,11 +210,32 @@
 ## Continuous Testing (All Phases)
 
 ### Unit Testing (/tests/unit/)
-- [ ] Create model test suite [HIGH]
-  - [ ] Write base model tests
-  - [ ] Implement relationship tests
-  - [ ] Add validation tests
-  - [ ] Create migration tests
+- [ ] Model Test Suites [HIGH]
+  - [ ] Organisation Model Tests
+    - [ ] Test tier-based feature enablement
+    - [ ] Test domain validation for Enterprise tier
+    - [ ] Test storage limit calculations
+    - [ ] Test hierarchy enablement rules
+    - [ ] Test business rule validation
+    - [ ] Test role hierarchy JSON validation
+    - [ ] Test audit log tracking
+    - [ ] Test GDPR compliance settings
+  - [ ] Subscription Model Tests
+    - [ ] Test billing interval logic
+    - [ ] Test usage tracking calculations
+    - [ ] Test tier-based limits
+    - [ ] Test trial period handling
+    - [ ] Test subscription status transitions
+    - [ ] Test period validation rules
+    - [ ] Test max user/storage calculations
+  - [ ] Item Model Tests
+    - [ ] Test hierarchy validation rules
+    - [ ] Test parent-child relationships
+    - [ ] Test subscription tier constraints
+    - [ ] Test composite key uniqueness
+    - [ ] Test soft delete behavior
+    - [ ] Test hierarchy depth validation
+    - [ ] Test node type validation
 - [x] Implement serializer tests (in test_serializers.py) [HIGH]
   - [x] Test serializer functionality
   - [x] Add validation tests with parameterized tests
@@ -225,7 +294,14 @@
   - [ ] Create mock service tests
   - [ ] Add error handling tests
   - [ ] Implement timeout tests
-
+- [ ] Create Organisation/Subscription Integration Tests [HIGH]
+  - [ ] Test tier upgrade/downgrade flows
+  - [ ] Test usage limit enforcement
+  - [ ] Test feature access by tier
+  - [ ] Test billing interval changes
+  - [ ] Test organisation state transitions
+  - [ ] Test subscription renewal flows
+  
 ### E2E Testing (/tests/e2e/)
 - [ ] Set up end-to-end test framework [HIGH]
   - [ ] Configure e2e test environment
@@ -239,6 +315,12 @@
   - [ ] Test main user workflows
   - [ ] Implement cross-feature tests
   - [ ] Test error scenarios
+- [ ] Create Organisation E2E Tests [HIGH]
+  - [ ] Test complete organisation creation flow
+  - [ ] Test subscription management workflow
+  - [ ] Test tier change scenarios
+  - [ ] Test member invitation flow
+  - [ ] Test domain restriction enforcement
 
 ### Test Fixtures (/tests/fixtures/)
 - [ ] Create base test data [HIGH]
@@ -253,6 +335,11 @@
   - [ ] Implement mock service responses
   - [ ] Create mock API data
   - [ ] Set up mock configurations
+- [x] Add Organisation/Subscription Factories [HIGH]
+  - [x] Create OrganisationFactory with tier variants
+  - [x] Create SubscriptionFactory with status variants
+  - [x] Set up related fixture factories
+  - [x] Create test data generators for usage metrics
 
 ## Documentation (All Phases)
 

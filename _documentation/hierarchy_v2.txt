@@ -1,0 +1,101 @@
+METHODOLOGY MAPPING AND WORK ITEM HIERARCHY
+
+1. KANBAN (Flow-based)
+└── Organisation
+    └── Platform (Business+)
+        └── Project/Product
+            └── Feature (Pro+)
+                └── Epic (Pro+)
+                    ├── Work Items
+                    │   ├── Task
+                    │   ├── Bug
+                    │   └── Improvement
+                    └── Advanced Items (Pro+)
+                        ├── Technical Debt
+                        ├── Spike
+                        ├── Test
+                        ├── Impediment
+                        └── Business Items (Business+)
+                            ├── Defect
+                            ├── Support Ticket
+                            └── Change Request
+
+2. SCRUM (Iterative)
+└── Organisation
+    └── Platform
+        └── Project/Product
+            ├── Feature
+            │   └── Epic
+            │       ├── User Story
+            │       │   └── Work Items
+            │       │       ├── Task
+            │       │       ├── Bug
+            │       │       └── Improvement
+            │       └── Advanced Items (Pro+)
+            │           ├── Technical Debt
+            │           ├── Spike
+            │           ├── Test
+            │           └── Impediment
+            └── Sprint Items
+                ├── Sprint Task
+                ├── Sprint Bug
+                └── Sprint Impediment
+
+3. WATERFALL (Phase-based)
+└── Organisation
+    └── Project
+        ├── 1. Requirements Phase
+        │   ├── Business Requirement
+        │   ├── Functional Requirement
+        │   ├── Non-Functional Requirement
+        │   └── Change Request
+        ├── 2. Design Phase
+        │   ├── System Design Document
+        │   ├── Architecture Specification
+        │   ├── UI/UX Design
+        │   ├── Wireframe
+        │   └── Prototype
+        ├── 3. Implementation Phase
+        │   ├── Task
+        │   ├── Code Module
+        │   ├── Integration Task
+        │   ├── Configuration Item
+        │   └── Technical Debt
+        ├── 4. Testing Phase
+        │   ├── Test Plan
+        │   ├── Test Case
+        │   ├── Defect
+        │   ├── Bug
+        │   ├── Regression Test
+        │   ├── Performance Test
+        │   └── Security Test
+        ├── 5. Deployment Phase
+        │   ├── Release Plan
+        │   ├── Deployment Task
+        │   ├── Rollback Plan
+        │   └── Deployment Validation
+        └── 6. Maintenance Phase
+            ├── Support Ticket
+            ├── Incident Report
+            ├── Change Request
+            ├── Patch
+            └── Enhancement
+
+TIER ACCESS TO METHODOLOGIES:
+
+STARTER:
+- Kanban only
+- Basic work items (Task, Bug, Improvement)
+- No hierarchy enforcement
+
+PRO:
+- Kanban and Scrum
+- Adds Feature, Epic, User Story structure
+- Adds Technical items
+- Basic hierarchy enforcement
+
+BUSINESS:
+- All methodologies
+- Multiple platforms
+- Cross-project relationships
+- Custom hierarchies
